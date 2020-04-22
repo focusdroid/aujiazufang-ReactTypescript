@@ -1,3 +1,21 @@
+## 项目说明
+### `项目中使用文件`
+项目使用create-react-app初始化项目 <br/>
+项目中使用及版本 <br/>
+```
+react 16.13.1
+redux 4.0.5
+react-redux 1.0.3
+webpack 4.42.0
+react-router 5.1.2
+less 3.11.1
+antd-mobile 2.3.1
+@types/react-redux 7.1.7
+```
+
+### `项目地址`
+[爱家租房移动端](https://github.com/focusdroid/aujiazufang-ReactTypescript)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
