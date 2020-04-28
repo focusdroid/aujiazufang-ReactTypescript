@@ -1,0 +1,204 @@
+@import './common';
+.title {
+  font-size: @titleFont;
+  color: @defaultColor;
+  text-align: center;
+  line-height: 20vh;
+}
+.center {
+  text-align: center;
+}
+.display {
+  display: flex;
+}
+.jcsb {
+  justify-content: space-between;
+}
+.input {
+  width: 85%;
+  height: calc(26px + 2vmin);
+  padding: 0 15px;
+  margin-top: 2%;
+  border-radius: calc(10px + 2vmin);
+  outline: linen;
+  border: 0;
+}
+/*输入框公用start*/
+.user {
+  text-align: center;
+  .input {
+    width: 85%;
+    height: calc(26px + 2vmin);
+    padding: 0 15px;
+    margin-top: 2%;
+    border-radius: calc(10px + 2vmin);
+    outline: linen;
+    border: 0;
+  }
+}
+/*输入框公用start*/
+/*登录按钮样式start*/
+.btn {
+  text-align: center;
+  .button {
+    width: 90%;
+    margin-top: 5%;
+    height: calc(26px + 4vmin);
+    outline: linen;
+    border-radius: 20px;
+    border: 0;
+    background-color: @defaultColor;
+    color: #fff;
+    font-size: @fontSize;
+  }
+}
+/*登录按钮样式end*/
+/*登录注册下面文字样式start*/
+.logincolor {
+  color: blue;
+}
+.messlogin {
+  margin: calc(8px + 2vmin) 0;
+  text-align: right;
+  padding-right: calc(20px + 2vmin);
+}
+/*登录注册下面文字样式end*/
+.absolute {
+  position: absolute;
+}
+.relative {
+  position: relative;
+}
+
+/*注册样式start*/
+.register {
+  .imgs {
+    width: 95%;
+    display: flex;
+    text-align: center;
+    .imgbox {
+      width: 80%;
+      padding: 0 15px;
+      text-align: center;
+      .img{
+        width: 100%;
+        height: calc(26px + 2vmin);
+        padding: 0 15px;
+        margin-top: 2%;
+        border-radius: calc(10px + 2vmin);
+        outline: linen;
+        border: 0;
+      }
+    }
+    .vailImgbox {
+      width: 20%;
+      .vailImg {
+        width: 100%;
+      }
+    }
+  }
+  .messagebox {
+    width: 95%;
+    display: flex;
+    padding: 0 15px;
+    text-align: center;
+    .msgbox {
+      width: 88%;
+      .message {
+        width: 85%;
+      }
+    }
+    .vailcode {
+      width: 30%;
+      button{
+        width: 100%;
+        border: none;
+        border-radius: 20px;
+        height: calc(26px + 2vmin);
+      }
+    }
+  }
+  .vailImg {
+    width: 24%;
+    height: calc(26px + 2vmin);
+    top: 10px;
+    border-radius: 10px;
+  }
+}
+/*注册样式end*/
+
+/*首页header样式start*/
+.homePageHeader {
+  height: @headerHeight;
+  .box {
+    width: 100%;
+    height: @headerHeight;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    background-color: #fff;
+  }
+  .logo {
+    margin-left: 20px;
+  }
+  .btn {
+    margin-right: 20px;
+    button {
+      outline: none;
+      border: none;
+      margin-left: calc(8px + 2vmin);
+      padding: calc(4px + 1vmin) calc(6px + 2vmin);
+      border-radius: 100px;
+      background-color: @defaultColor;
+      color: #fff;
+    }
+  }
+  .username {
+    padding-right: 20px;
+  }
+  .homecontent {
+    position: fixed;
+    bottom: 150px;
+    width: 100%;
+  }
+}
+/*首页header样式end*/
+
+/* 首页样式start */
+.index {
+  background-color: #fff;
+}
+/* 首页样式end */
+.mt10 {
+  margin-top: calc(10px + 2vmin);
+}
+/*我的 样式start*/
+.my {
+  margin: 0 auto;
+  .info {
+    width: 90%;
+    background-color: #fff;
+    margin: calc(4px + 2vmin) auto;
+    padding: calc(4px + 2vmin);
+    border-radius: calc(2px + 2vmin);
+  }
+  .baseinfo {
+    width: 90%;
+    background-color: #fff;
+    margin: calc(4px + 2vmin) auto;
+    padding: calc(4px + 0.3vmin);
+    border-radius: calc(2px + 2vmin);
+  }
+}
+/*我的 样式end*/
+
+
+
+
+
+
+
+
+
+

@@ -12,6 +12,8 @@ less 3.11.1
 antd-mobile 2.3.1
 @types/react-redux 7.1.7
 ```
+### `项目文件目录设置`
+
 
 ### `项目地址`
 [爱家租房移动端](https://github.com/focusdroid/aujiazufang-ReactTypescript)

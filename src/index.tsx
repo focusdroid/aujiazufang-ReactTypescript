@@ -1,13 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import 'antd-mobile/dist/antd-mobile.less'
-import App from './App';
+import 'antd-mobile/dist/antd-mobile.css'
+import Router from './Router'
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Router />
   </React.StrictMode>,
   document.getElementById('root')
 );
