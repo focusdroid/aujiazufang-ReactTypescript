@@ -7,7 +7,8 @@ const Login = lazy(() => import('./components/login/Login'))
 const Register = lazy(() => import('./components/register/Register'))
 const Index = lazy(() => import('./components/index/Index'))
 const My = lazy(() => import('./components/user/my/My'))
-const Search = lazy(() => import('./components/search/Search'))
+const Search = lazy(() => import('./components/user/search/Search'))
+const Detail = lazy(() => import('./components/user/detail/Detail'))
 
 
 const Router = () => {
@@ -21,6 +22,7 @@ const Router = () => {
                     <Route path={'/register'} component={Register}></Route>
                     <Route path={'/my'} component={My}></Route>
                     <Route path={'/search'} component={Search}></Route>
+                    <Route path={'/detail'} component={Detail}></Route>
                     <Route path={'/hello'} component={Hello}></Route>
                 </Switch>
             </Suspense>
