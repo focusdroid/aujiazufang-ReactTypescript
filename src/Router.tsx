@@ -11,8 +11,9 @@ const Search = lazy(() => import('./components/search/Search'))
 
 
 const Router = () => {
+    // @ts-ignore
     return (<BrowserRouter>
-        <App path='/'>
+        <App>
             <Suspense fallback={<div>加载中....</div>}>
                 <Switch>
                     <Route exact path={'/'} component={Index}></Route>
