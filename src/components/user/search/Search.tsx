@@ -4,10 +4,10 @@ import bugImg from '../../../static/images/img2.png'
 import iconImg from '../../../static/images/img.jpg'
 const search = require('../../../style/less/base.module.less')
 
-
 interface IProps {
     getDetail: () => void;
-    history?: any
+    history?: any;
+    param: 1;
 }
 
 const Search = (props:IProps) => {
