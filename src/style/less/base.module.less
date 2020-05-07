@@ -5,6 +5,9 @@
   text-align: center;
   line-height: 20vh;
 }
+.marauto {
+  margin: 0 auto;
+}
 .center {
   text-align: center;
 }
@@ -41,6 +44,17 @@
 .btn {
   text-align: center;
   .button {
+    width: 90%;
+    margin-top: 5%;
+    height: calc(26px + 4vmin);
+    outline: linen;
+    border-radius: 20px;
+    border: 0;
+    background-color: @defaultColor;
+    color: #fff;
+    font-size: @fontSize;
+  }
+  button {
     width: 90%;
     margin-top: 5%;
     height: calc(26px + 4vmin);
@@ -244,8 +258,127 @@
       width: 95%;
     }
   }
+  .custinfo {
+    width: 95%;
+    background-color: #fff;
+    margin: 0 auto;
+    padding: calc(2px + 1vmin);
+    margin-top: calc(8px + 2vmin);
+    .img {
+      width: calc(40px + 10vmin);
+      border-radius: 50%;
+    }
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+  }
+  .roomdetail {
+    ul {
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #ccc;
+      padding: 0 0 8px 0;
+      margin-top: calc(20px + 2vmin);
+    }
+  }
+  .newsdetails {
+    ul {
+      list-style: none;
+      display: flex;
+      flex-flow: wrap;
+      text-align: left;
+      margin: 0;
+      padding: 0;
+      li {
+        width: 30%;
+        padding: 0 0 10px 0;
+        margin-left: 15%;
+      }
+    }
+  }
+  .roomnews {
+    div:last-child {
+      margin-bottom: calc(40px + 5vmin);
+    }
+  }
 }
+.detail:nth-last-child(2) {
+  margin-bottom: clac(1000px + 10vmin);
+}
+.btnposition {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  margin: 0 auto;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.order {
+  .box {
+    width: 94%;
+    margin: 10px auto;
+    background-color: #fff;
+    font-size: calc(8px + 2vmin);
+    padding: 0 2%;
+    .title {
+      display: flex;
+      justify-content: space-between;
+      font-size: @fontSize;
+      line-height: calc(32px + 2vmin);
+      border-bottom: 1px solid #ccc;
+    }
+    .content {
+      display: flex;
+      width: 100%;
+      padding: calc(30px + 2vmin) 0;
+      .contOne {
+        width: 40%;
+        img {
+          width: calc(80px + 10vmin);
+        }
+      }
+      .contTwo {
+        width: 60%;
+        font-size: calc(6px + 2vmin);
+        div {
+          line-height: calc(14px + 2vmin);
+        }
+      }
+    }
+  }
+}
+.order:last-child {
+  margin-bottom: calc(20px + 2vmin);
+}
+.orderbtn {
+  border: none;
+  padding: calc(2px + 1vmin) calc(2px + 2vmin);
+  background-color: green;
+  color: #fff;
+  border-radius: calc(25px + 2vmin);
+  font-size: calc(6px + 2vmin);
+}
+
 /*详情页面end*/
+/*实名认证start*/
+.auth {
+  .box {
+    width: 94%;
+    margin: 10px auto;
+    background-color: #fff;
+    font-size: @fontSize;
+    padding: 0 2%;
+  }
+  .titles {
+  }
+}
+/*实名认证end*/
 
 
 

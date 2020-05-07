@@ -9,6 +9,8 @@ const Index = lazy(() => import('./components/index/Index'))
 const My = lazy(() => import('./components/user/my/My'))
 const Search = lazy(() => import('./components/user/search/Search'))
 const Detail = lazy(() => import('./components/user/detail/Detail'))
+const Orders = lazy(() => import('./components/user/orders/Orders'))
+const Auth = lazy(() => import('./components/user/auth/Auth'))
 
 
 const Router = () => {
@@ -23,6 +25,8 @@ const Router = () => {
                     <Route path={'/my'} component={My}></Route>
                     <Route path={'/search'} component={Search}></Route>
                     <Route path={'/detail'} component={Detail}></Route>
+                    <Route path={'/orders'} component={Orders}></Route>
+                    <Route path={'/auth'} component={Auth}></Route>
                     <Route path={'/hello'} component={Hello}></Route>
                 </Switch>
             </Suspense>

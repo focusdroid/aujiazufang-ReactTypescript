@@ -12,7 +12,7 @@ export default class HomePageHeader extends Component<any> {
             <div className={homePageHeader.homePageHeader}>
                 <div className={homePageHeader.box}>
                     <div className={homePageHeader.logo}>iHome</div>
-                    <div className={homePageHeader.btn} style={{display: this.state.loginStatus ? 'none' : 'line'}}>
+                    <div className={homePageHeader.btn} style={{display: this.state.loginStatus ? 'none' : 'flex'}}>
                         <Link to={'/register'}><button>注册</button></Link>
                         <Link to={'/login'}><button>登录</button></Link>
                     </div>

@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import TitleBar from "../../../plugin/titleBar/TitleBar";
 import img from '../../../static/images/img.jpg'
+import { Link } from 'react-router-dom'
 const my = require('../../../style/less/base.module.less')
 
 const My = () => {
@@ -24,10 +25,10 @@ const My = () => {
             </div>
         </div>
         <div className={`${my.baseinfo}`}>
-            <p>我的订单</p>
+            <Link to={'/orders'}><p>我的订单</p></Link>
         </div>
         <div className={`${my.baseinfo}`}>
-            <p>实名认证</p>
+            <Link to={'/auth'}><p>实名认证</p></Link>
         </div>
         <div className={`${my.baseinfo}`}>
             <p>我的房源</p>
