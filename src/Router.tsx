@@ -1,6 +1,7 @@
 import React, { Suspense, lazy } from 'react'
 import { BrowserRouter, Route, Switch  } from 'react-router-dom'
 import App from './App'
+// import NewHouse from "./components/user/newhouse/NewHouse";
 
 const Hello = lazy(() => import('./components/Hello'))
 const Login = lazy(() => import('./components/login/Login'))
@@ -11,6 +12,8 @@ const Search = lazy(() => import('./components/user/search/Search'))
 const Detail = lazy(() => import('./components/user/detail/Detail'))
 const Orders = lazy(() => import('./components/user/orders/Orders'))
 const Auth = lazy(() => import('./components/user/auth/Auth'))
+const NewHouse = lazy(() => import('./components/user/newhouse/NewHouse'))
+const MyHouse = lazy(() => import('./components/user/myhouse/MyHouse'))
 
 
 const Router = () => {
@@ -27,6 +30,8 @@ const Router = () => {
                     <Route path={'/detail'} component={Detail}></Route>
                     <Route path={'/orders'} component={Orders}></Route>
                     <Route path={'/auth'} component={Auth}></Route>
+                    <Route path={'/newhouse'} component={NewHouse}></Route>
+                    <Route path={'/myhouse'} component={MyHouse}></Route>
                     <Route path={'/hello'} component={Hello}></Route>
                 </Switch>
             </Suspense>

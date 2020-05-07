@@ -6,29 +6,52 @@ const Auth = () => {
     return (<Fragment>
         <TitleBar title={'实名认证'}/>
         <div className={auth.auth}>
+            {/*基本信息start*/}
             <div className={auth.box}>
                 <div className={auth.titles}>
-                    <div>认证信息</div>
+                    <div>基本信息</div>
                 </div>
-                <div>
+                <div className={auth.table}>
                     <div>
-                        <div>真实姓名</div>
-                        <div><input type="text" placeholder={'真实姓名'}/></div>
+                        <div className={auth.name}>房屋标题</div>
+                        <div>
+                            <input
+                                type="text"
+                                className={auth.authinput}
+                                placeholder={'房屋标题'}
+                            />
+                        </div>
                     </div>
                     <div>
-                        <div>身份证号码</div>
-                        <div><input type="text" placeholder={'身份证号码'}/></div>
+                        <div className={auth.name}>每晚价格</div>
+                        <div>
+                            <input type="text"
+                                   className={auth.authinput}
+                                   placeholder={'每晚价格'}
+                            />
+                        </div>
                     </div>
                     <div>
-                        <div>手机号码</div>
-                        <div><input type="text" placeholder={'手机号码'}/></div>
+                        <div className={auth.name}>所在城区</div>
+                        <div>
+                            <input type="text"
+                                   className={auth.authinput}
+                                   placeholder={'所在城区'}
+                            />
+                        </div>
                     </div>
                     <div>
-                        <div>现居住地址</div>
-                        <div><input type="text" placeholder={'现居住地址'}/></div>
+                        <div className={auth.name}>详细地址</div>
+                        <div className={auth.marauto}>
+                            <input type="text"
+                                   className={auth.authinput}
+                                   placeholder={'详细地址'}
+                            />
+                        </div>
                     </div>
                 </div>
             </div>
+            {/*基本信息end*/}
             <div className={auth.btn}>
                 <button>提交信息</button>
             </div>

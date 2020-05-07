@@ -31,7 +31,7 @@ const My = () => {
             <Link to={'/auth'}><p>实名认证</p></Link>
         </div>
         <div className={`${my.baseinfo}`}>
-            <p>我的房源</p>
+            <Link to={'/myhouse'}><p>我的房源</p></Link>
         </div>
         <div className={`${my.baseinfo}`}>
             <p>客户订单</p>
