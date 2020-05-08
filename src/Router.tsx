@@ -15,6 +15,7 @@ const NewHouse = lazy(() => import('./components/user/newhouse/NewHouse'))
 const MyHouse = lazy(() => import('./components/user/myhouse/MyHouse'))
 const Lorders = lazy(() => import('./components/user/lorders/Lorders'))
 const Booking = lazy(() => import('./components/user/booking/Booking'))
+const Profile = lazy(() => import('./components/user/profile/Profile'))
 
 
 const Router = () => {
@@ -35,6 +36,7 @@ const Router = () => {
                     <Route path={'/myhouse'} component={MyHouse}></Route>
                     <Route path={'/lorders'} component={Lorders}></Route>
                     <Route path={'/booking'} component={Booking}></Route>
+                    <Route path={'/profile'} component={Profile}></Route>
                     <Route path={'/hello'} component={Hello}></Route>
                 </Switch>
             </Suspense>

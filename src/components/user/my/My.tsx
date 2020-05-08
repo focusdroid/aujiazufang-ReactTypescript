@@ -12,7 +12,7 @@ const My = () => {
         <div className={` ${my.info}`}>
             <div className={`${my.display} ${my.jcsb}`}>
                 <div>个人信息</div>
-                <div>修改</div>
+                <div><Link to={'/profile'}>修改</Link></div>
             </div>
             <div className={`${my.mt10} ${my.display}`}>
                 <div>
