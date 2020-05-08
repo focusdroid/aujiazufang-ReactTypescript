@@ -34,7 +34,7 @@ const My = () => {
             <Link to={'/myhouse'}><p>我的房源</p></Link>
         </div>
         <div className={`${my.baseinfo}`}>
-            <p>客户订单</p>
+            <Link to={'/lorders'}><p>客户订单</p></Link>
         </div>
         <div className={`${my.baseinfo}`}>
             <p>退出</p>

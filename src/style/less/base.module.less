@@ -1,4 +1,10 @@
 @import './common';
+.backred {
+  background-color: red;
+}
+.backgreen {
+  background-color: green;
+}
 .title {
   font-size: @titleFont;
   color: @defaultColor;
@@ -363,6 +369,7 @@ ul {
   color: #fff;
   border-radius: calc(25px + 2vmin);
   font-size: calc(6px + 2vmin);
+  margin-left: 10px;
 }
 
 /*详情页面end*/
@@ -467,8 +474,45 @@ ul {
     }
   }
 }
-
-
+/*客户订单start*/
+.loader {
+  .box {
+    width: 94%;
+    margin: 10px auto;
+    background-color: #fff;
+    font-size: calc(8px + 2vmin);
+    padding: 0 2%;
+    .title {
+      display: flex;
+      justify-content: space-between;
+      font-size: @fontSize;
+      line-height: calc(32px + 2vmin);
+      border-bottom: 1px solid #ccc;
+    }
+    .content {
+      display: flex;
+      width: 100%;
+      padding: calc(30px + 2vmin) 0;
+      .contOne {
+        width: 40%;
+        img {
+          width: calc(80px + 10vmin);
+        }
+      }
+      .contTwo {
+        width: 60%;
+        font-size: calc(6px + 2vmin);
+        div {
+          line-height: calc(14px + 2vmin);
+        }
+      }
+    }
+  }
+}
+.loader:last-child {
+  margin-bottom: calc(20px + 2vmin);
+}
+/*客户订单end*/
 
 
 
