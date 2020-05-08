@@ -1,4 +1,4 @@
-import React, { Fragment, Component } from 'react'
+import React, { Fragment } from 'react'
 import TitleBar from "../../../plugin/titleBar/TitleBar";
 import bugImg from '../../../static/images/img2.png'
 import iconImg from '../../../static/images/img.jpg'
