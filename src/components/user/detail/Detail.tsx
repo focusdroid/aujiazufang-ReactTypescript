@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react'
+import { Link } from 'react-router-dom'
 import TitleBar from "../../../plugin/titleBar/TitleBar";
 import bugImg from '../../../static/images/img2.png'
 import img from '../../../static/images/img.jpg'
@@ -90,7 +91,7 @@ const Detail = () => {
                         <div>
                             <ul>
                                 <li>
-                                    <div style={{padding: '0 10px;'}} className={`${detail.display} ${detail.jcsb}`}>
+                                    <div style={{padding: '0 10px'}} className={`${detail.display} ${detail.jcsb}`}>
                                         <p>tree</p>
                                         <p>2002-05-02 12:21:56</p>
                                     </div>
@@ -107,7 +108,7 @@ const Detail = () => {
             </div>
             {/*房屋信息end*/}
             {<div className={`${detail.btn} ${detail.btnposition}`}>
-                <button className={detail.button}>即刻预定</button>
+                <Link to={'/booking'}><button className={detail.button}>即刻预定</button></Link>
             </div>}
         </div>
     </Fragment>)
