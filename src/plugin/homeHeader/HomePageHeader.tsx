@@ -1,13 +1,19 @@
 import React, { Fragment, Component } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import Button from '../../plugin/button/Button'
 const homePageHeader = require('../../style/less/base.module.less')
 
-export default class HomePageHeader extends Component<any> {
-    state = {
-        loginStatus: false
+
+class HomePageHeader extends Component<any, any> {
+    constructor(props:any) {
+        super(props);
+        this.state = {
+            loginStatus: false
+        }
     }
+
     public render(){
+        // @ts-ignore
         return (<Fragment>
             <div className={homePageHeader.homePageHeader}>
                 <div className={homePageHeader.box}>
@@ -29,10 +35,20 @@ export default class HomePageHeader extends Component<any> {
                     <div>
                         <input className={homePageHeader.input} type="text" placeholder={'入住时间'}/>
                     </div>
-                    <Button title={'搜索'}/>
+                    {/*<div onClick={this.jumpSearch}><Button title={'搜索1'}/></div>*/}
+                    <div><Button onClick={this.jumpSearch} title={'搜索1'}/></div>
                 </div>
                 {/*内容输入部分end*/}
             </div>
         </Fragment>)
     }
+    componentDidMount() {
+        console.log(this.props)
+    }
+
+    public jumpSearch = () => {
+        this.props.history.push('/search')
+    }
 }
+
+export default withRouter(HomePageHeader)
