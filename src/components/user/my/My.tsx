@@ -1,10 +1,16 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useEffect } from 'react'
 import TitleBar from "../../../plugin/titleBar/TitleBar";
 import img from '../../../static/images/img.jpg'
 import { Link } from 'react-router-dom'
+import { TestFetch } from "../../../api";
 const my = require('../../../style/less/base.module.less')
 
 const My = () => {
+    useEffect(() => {
+       TestFetch().then(response => {
+           console.log(response)
+       })
+    })
     return (<Fragment>
         <TitleBar title={'我的设置'}/>
     {/*    我的信息、设置start*/}

@@ -11,7 +11,6 @@ class HomePageHeader extends Component<any, any> {
             loginStatus: false
         }
     }
-
     public render(){
         // @ts-ignore
         return (<Fragment>
@@ -41,9 +40,6 @@ class HomePageHeader extends Component<any, any> {
                 {/*内容输入部分end*/}
             </div>
         </Fragment>)
-    }
-    componentDidMount() {
-        console.log(this.props)
     }
 
     public jumpSearch = () => {
