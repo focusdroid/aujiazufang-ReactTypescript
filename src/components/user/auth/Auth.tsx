@@ -1,8 +1,20 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState } from 'react'
 import TitleBar from "../../../plugin/titleBar/TitleBar";
 const auth = require('../../../style/less/base.module.less')
 
-const Auth = () => {
+interface IProps {
+    changeTitle: () => void;
+    changeMoney: () => void;
+    changeAddress: () => void;
+    changeDetailAddress: () => void;
+    sublimtMessage: () => void;
+}
+
+const Auth = (props: IProps) => {
+    const [houseTitle, setHoueseTitle] = useState('')
+    const [houseMoney, sethouseMoney] = useState('')
+    const [houseAddress, setHouseAddress] = useState('')
+    const [houseDetailAddress, setHouseDetailAddress] = useState('')
     return (<Fragment>
         <TitleBar title={'实名认证'}/>
         <div className={auth.auth}>
@@ -19,6 +31,8 @@ const Auth = () => {
                                 type="text"
                                 className={auth.authinput}
                                 placeholder={'房屋标题'}
+                                value={houseTitle}
+                                onChange={changeTitle}
                             />
                         </div>
                     </div>
@@ -28,6 +42,8 @@ const Auth = () => {
                             <input type="text"
                                    className={auth.authinput}
                                    placeholder={'每晚价格'}
+                                   value={houseMoney}
+                                   onChange={changeMoney}
                             />
                         </div>
                     </div>
@@ -37,6 +53,8 @@ const Auth = () => {
                             <input type="text"
                                    className={auth.authinput}
                                    placeholder={'所在城区'}
+                                   value={houseAddress}
+                                   onChange={changeAddress}
                             />
                         </div>
                     </div>
@@ -46,6 +64,8 @@ const Auth = () => {
                             <input type="text"
                                    className={auth.authinput}
                                    placeholder={'详细地址'}
+                                   value={houseDetailAddress}
+                                   onChange={changeDetailAddress}
                             />
                         </div>
                     </div>
@@ -53,9 +73,28 @@ const Auth = () => {
             </div>
             {/*基本信息end*/}
             <div className={auth.btn}>
-                <button>提交信息</button>
+                <button onClick={sublimtMessage}>提交信息</button>
             </div>
         </div>
     </Fragment>)
+    function changeTitle(e:any) { // 房屋标题
+        setHoueseTitle(e.target.value)
+    }
+    function changeMoney (e:any) {
+        sethouseMoney(e.target.value)
+    }
+    function changeAddress (e:any) {
+        setHouseAddress(e.target.value)
+    }
+    function changeDetailAddress (e:any) {
+        setHouseDetailAddress(e.target.value)
+    }
+    function sublimtMessage () { // 获取房屋信息
+        console.log(houseTitle)
+        console.log(houseMoney)
+        console.log(houseAddress)
+        console.log(houseDetailAddress)
+    }
 }
+
 export default Auth

@@ -8,7 +8,7 @@ export default class fetch {
             }).then(response => {
                 console.log('------------------------------')
                 console.log(response)
-                console.log(Promise.resolve(response.data))
+                console.log(Promise.resolve(response.data ))
                 console.log('------------------------------')
                 return Promise.resolve(response)
             }).catch(err => {
