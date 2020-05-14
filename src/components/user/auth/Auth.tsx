@@ -80,13 +80,13 @@ const Auth = (props: IProps) => {
     function changeTitle(e:any) { // 房屋标题
         setHoueseTitle(e.target.value)
     }
-    function changeMoney (e:any) {
+    function changeMoney (e:any) { // 每晚价格
         sethouseMoney(e.target.value)
     }
-    function changeAddress (e:any) {
+    function changeAddress (e:any) { // 房屋地址
         setHouseAddress(e.target.value)
     }
-    function changeDetailAddress (e:any) {
+    function changeDetailAddress (e:any) { // 房屋具体详细地址
         setHouseDetailAddress(e.target.value)
     }
     function sublimtMessage () { // 获取房屋信息
@@ -96,5 +96,4 @@ const Auth = (props: IProps) => {
         console.log(houseDetailAddress)
     }
 }
-
 export default Auth
