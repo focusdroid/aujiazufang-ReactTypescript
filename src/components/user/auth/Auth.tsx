@@ -80,7 +80,7 @@ const Auth = (props: IProps) => {
     function changeTitle(e:any) { // 房屋标题
         setHoueseTitle(e.target.value)
     }
-    function changeMoney (e:any) { // 每晚价格
+    function changeMoney (e:any) { // 每晚价格 200+----------------------------
         sethouseMoney(e.target.value)
     }
     function changeAddress (e:any) { // 房屋地址

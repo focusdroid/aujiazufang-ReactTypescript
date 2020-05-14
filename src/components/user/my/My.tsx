@@ -6,7 +6,7 @@ import { TestFetch } from "../../../api";
 const my = require('../../../style/less/base.module.less')
 
 const My = () => {
-    useEffect(() => {
+    useEffect(() => { // 测试获取ajax数据，
        TestFetch().then(response => {
            console.log(response)
        })
