@@ -1,0 +1,55 @@
+.loading {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #efefef;
+}
+
+.inside {
+  background: currentcolor;
+  position: relative;
+  -webkit-animation: inside 0.5s ease-in-out infinite;
+  animation: inside 0.5s ease-in-out infinite;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+  width: 0.3em;
+  height: 1em;
+}
+.inside:after,
+.inside:before {
+  content: '';
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  background: inherit;
+  -webkit-animation: inherit;
+  animation: inherit;
+}
+.inside:before {
+  right: .5em;
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+.inside:after {
+  left: .5em;
+  -webkit-animation-delay: 0.6s;
+  animation-delay: 0.6s;
+}
+@-webkit-keyframes inside {
+  0%, 100% {
+    box-shadow: 0 0 0 currentcolor, 0 0 0 currentcolor;
+  }
+  50% {
+    box-shadow: 0 -.25em 0 currentcolor, 0 .25em 0 currentcolor;
+  }
+}
+@keyframes inside {
+  0%, 100% {
+    box-shadow: 0 0 0 currentcolor, 0 0 0 currentcolor;
+  }
+  50% {
+    box-shadow: 0 -.25em 0 currentcolor, 0 .25em 0 currentcolor;
+  }
+}

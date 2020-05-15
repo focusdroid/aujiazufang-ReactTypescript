@@ -2,6 +2,8 @@ import React, { Suspense, lazy } from 'react'
 import { BrowserRouter, Route, Switch  } from 'react-router-dom'
 import App from './App'
 
+import Loading from './plugin/loading/Loading'
+
 const Hello = lazy(() => import('./components/Hello'))
 const Login = lazy(() => import('./components/login/Login'))
 const Register = lazy(() => import('./components/register/Register'))
@@ -9,7 +11,6 @@ const Index = lazy(() => import('./components/index/Index'))
 const My = lazy(() => import('./components/user/my/My'))
 const Search = lazy(() => import('./components/user/search/Search'))
 const Detail = lazy(() => import('./components/user/detail/Detail'))
-// const Orders = lazy(() => import('./components/user/orders/Orders'))
 const Auth = lazy(() => import('./components/user/auth/Auth'))
 const NewHouse = lazy(() => import('./components/user/newhouse/NewHouse'))
 const MyHouse = lazy(() => import('./components/user/myhouse/MyHouse'))
@@ -22,7 +23,7 @@ const Router = () => {
     // @ts-ignore
     return (<BrowserRouter>
         <App>
-            <Suspense fallback={<div>加载中....</div>}>
+            <Suspense fallback={<Loading/>}>
                 <Switch>
                     <Route exact path={'/'} component={Index}></Route>
                     <Route path={'/login'} component={Login}></Route>

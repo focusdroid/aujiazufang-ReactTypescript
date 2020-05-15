@@ -1,20 +1,21 @@
 import React, { Fragment, useState } from 'react'
 import TitleBar from "../../../plugin/titleBar/TitleBar";
+const _  =  require('loadsh')
 const auth = require('../../../style/less/base.module.less')
 
 interface IProps {
-    changeTitle: () => void;
-    changeMoney: () => void;
-    changeAddress: () => void;
-    changeDetailAddress: () => void;
-    sublimtMessage: () => void;
+    changeTitle?: () => void;
+    changeMoney?: () => void;
+    changeAddress?: () => void;
+    changeDetailAddress?: () => void;
+    sublimtMessage?: () => void;
 }
 
 const Auth = (props: IProps) => {
-    const [houseTitle, setHoueseTitle] = useState('')
-    const [houseMoney, sethouseMoney] = useState('')
-    const [houseAddress, setHouseAddress] = useState('')
-    const [houseDetailAddress, setHouseDetailAddress] = useState('')
+    const [houseTitle, setHoueseTitle] = useState<string>('')
+    const [houseMoney, sethouseMoney] = useState<string>('')
+    const [houseAddress, setHouseAddress] = useState<string>('')
+    const [houseDetailAddress, setHouseDetailAddress] = useState<string>('')
     return (<Fragment>
         <TitleBar title={'实名认证'}/>
         <div className={auth.auth}>
@@ -90,6 +91,7 @@ const Auth = (props: IProps) => {
         setHouseDetailAddress(e.target.value)
     }
     function sublimtMessage () { // 获取房屋信息
+            console.log(_.drop([1, 2, 3]))
         console.log(houseTitle)
         console.log(houseMoney)
         console.log(houseAddress)
