@@ -1,6 +1,5 @@
 import React, { Fragment, useState } from 'react'
 import TitleBar from "../../../plugin/titleBar/TitleBar";
-const _  =  require('loadsh')
 const auth = require('../../../style/less/base.module.less')
 
 interface IProps {
@@ -91,7 +90,6 @@ const Auth = (props: IProps) => {
         setHouseDetailAddress(e.target.value)
     }
     function sublimtMessage () { // 获取房屋信息
-            console.log(_.drop([1, 2, 3]))
         console.log(houseTitle)
         console.log(houseMoney)
         console.log(houseAddress)

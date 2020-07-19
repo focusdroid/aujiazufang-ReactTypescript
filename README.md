@@ -18,6 +18,18 @@ antd-mobile 2.3.1
 ### `项目地址`
 [爱家租房移动端](https://github.com/focusdroid/aujiazufang-ReactTypescript)
 
+
+
+### `后端接口`
+```
+- 我的 > 点击个人信息  > 上传图像和其他信息
+- 我的 > 个人信息展示 
+- 我的 > 实名认证 > 实名认证接口
+- 
+- 
+```
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

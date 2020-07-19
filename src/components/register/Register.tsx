@@ -3,9 +3,16 @@ import Logo from '../../plugin/logo/Logo'
 import vailImg from '../../static/images/vail.png'
 import { Link } from 'react-router-dom'
 import Button from "../../plugin/button/Button";
+import axios from 'axios'
 const register = require('../../style/less/base.module.less')
 
 export default class Register extends Component {
+    constructor (props:any) {
+        super(props)
+        this.state = {
+            vailImg: ''
+        }
+    }
     public render(){
         return (<Fragment>
             <Logo/>
@@ -18,7 +25,7 @@ export default class Register extends Component {
                         <input type="text" className={`${register.img}`} placeholder={'图片验证码'}/>
                     </div>
                     <div className={`${register.vailImgbox}`}>
-                        <img className={`${register.vailImg}`} src={vailImg} alt=""/>
+                        <img onClick={this.changeImage} className={`${register.vailImg}`} src={vailImg} alt=""/>
                     </div>
                 </div>
                 <div className={`${register.user} ${register.messagebox}`}>
@@ -44,5 +51,13 @@ export default class Register extends Component {
                 </div>
             </div>
         </Fragment>)
+    }
+    componentDidMount() {
+
+    }
+    changeImage () {
+        alert()
+        // 形成图片验证码的后端地址，设置到页面上，让浏览器
+        // axios.get()
     }
 }
