@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import TitleBar from "../../../plugin/titleBar/TitleBar";
 import img from '../../../static/images/img.jpg'
+import axios from 'axios'
 const order = require('../../../style/less/base.module.less')
 
 const Orders = () => {
@@ -12,7 +13,8 @@ const Orders = () => {
                     <div>
                         <div className={order.title}>
                             <div>订单编号: <span>7</span></div>
-                            <div><button className={order.orderbtn}>发表评价</button></div>
+                            {/*<div><button className={order.orderbtn}>发表评价</button></div>*/}
+                            <div><button className={order.orderbtn} onClick={writPay}>待支付</button></div>
                         </div>
                         <div className={order.content}>
                             <div className={order.contOne}>
@@ -137,5 +139,14 @@ const Orders = () => {
             </ul>
         </div>
     </Fragment>)
+    function writPay () {
+        console.log('ok')
+        axios.post(`http://192.168.0.108:5000/api/v1.0/orders/payment`).then((res:any) => {
+            console.log(res)
+        }).catch((err:any) => {
+            console.log('error...')
+            console.log(err)
+        })
+    }
 }
 export default Orders
