@@ -4,6 +4,16 @@ import App from './App'
 
 import Loading from './plugin/loading/Loading'
 
+let routes = [
+    {id: 0, author: 1, name: 'Hello', path: '/hello', component: lazy(() => import('./components/Hello'))},
+    {id: 1, author: 1, name: 'Login', path: '/login', component: lazy(() => import('./components/login/Login'))},
+    {id: 2, author: 1, name: 'Register', path: '/register', component: lazy(() => import('./components/register/Register'))},
+    {id: 3, author: 1, name: 'Index', path: '/', exact: true, component: lazy(() => import('./components/index/Index'))},
+    {id: 4, author: 1, name: 'My', path: '/my', component: lazy(() => import('./components/user/my/My'))},
+    {id: 5, author: 1, name: 'Search', path: '/search', component: lazy(() => import('./components/user/search/Search'))},
+    {id: 6, author: 1, name: 'Detail', path: '/detail', component: lazy(() => import('./components/user/detail/Detail'))},
+]
+
 const Hello = lazy(() => import('./components/Hello'))
 const Login = lazy(() => import('./components/login/Login'))
 const Register = lazy(() => import('./components/register/Register'))
@@ -11,6 +21,7 @@ const Index = lazy(() => import('./components/index/Index'))
 const My = lazy(() => import('./components/user/my/My'))
 const Search = lazy(() => import('./components/user/search/Search'))
 const Detail = lazy(() => import('./components/user/detail/Detail'))
+
 const Auth = lazy(() => import('./components/user/auth/Auth'))
 const NewHouse = lazy(() => import('./components/user/newhouse/NewHouse'))
 const MyHouse = lazy(() => import('./components/user/myhouse/MyHouse'))
