@@ -7,7 +7,7 @@ const my = require('../../../style/less/base.module.less')
 
 const My = () => {
     useEffect(() => { // 测试获取ajax数据，
-       TestFetch().then(response => {
+       TestFetch().then((response:any) => {
            console.log(response)
        })
     })

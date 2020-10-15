@@ -84,7 +84,7 @@ export default class Register extends Component<any, IState> {
     componentDidMount() {
         this.changeImage()
     }
-    changeImage () {
+    changeImage = () => { // 点击切换验证码
         // 形成图片验证码的后端地址，设置到页面上，让浏览器
        this.setState(() => ({
             code: Math.floor(Math.random()*100000000000000)
