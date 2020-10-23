@@ -2,7 +2,8 @@ import React, {Fragment, Component } from 'react'
 import Logo from '../../plugin/logo/Logo'
 import { Link } from 'react-router-dom'
 import Button from "../../plugin/button/Button";
-import { get_sms_codes, get_image_code } from '../../api'
+import { get_sms_codes, registerUser } from '../../api'
+import { Toast } from 'antd-mobile';
 const register = require('../../style/less/base.module.less')
 
 interface IState {
@@ -12,7 +13,7 @@ interface IState {
     imgCode: string
     messageValue: string | number | undefined
     password: string
-    confirmPassword: string
+    password2: string
 }
 
 
@@ -25,7 +26,7 @@ export default class Register extends Component<any, IState> {
             imgCode: '', // 图片验证码输入框信息
             messageValue: '', // 短信验证码信息
             password: '', // 密码
-            confirmPassword: '' // 确认密码
+            password2: '' // 确认密码
         }
     }
     public render(){
@@ -72,7 +73,7 @@ export default class Register extends Component<any, IState> {
                     <input onChange={(e:any) => this.setPassword(e)} value={this.state.password} className={register.input} type="text" placeholder={'密码'}/>
                 </div>
                 <div className={`${register.user}`}>
-                    <input onChange={(e:any) => this.setConfirmPassword(e)} value={this.state.confirmPassword} className={register.input} type="text" placeholder={'确认密码'}/>
+                    <input onChange={(e:any) => this.setConfirmPassword(e)} value={this.state.password2} className={register.input} type="text" placeholder={'确认密码'}/>
                 </div>
                 <Button title={'注册'} onClick={this.register}/>
                 <div className={register.messlogin}>
@@ -94,7 +95,7 @@ export default class Register extends Component<any, IState> {
            }))
         })
     }
-    getImageCode (e:any) {
+    getImageCode (e:any) { // 点击更换图片验证码
         let value = e.target.value
         this.setState(() => ({
             imgCode: value
@@ -106,12 +107,13 @@ export default class Register extends Component<any, IState> {
             messageValue: value
         }))
     }
-    sendSmsCode () { // 点击发送验证码
+    sendSmsCode = () => { // 点击发送验证码
         let obj = {
             image_code_id: this.state.code,
-            image_code: '',
+            image_code: this.state.imgCode,
             mobile: this.state.phone
         }
+        console.log(obj)
         get_sms_codes(obj)
     }
     setMobile (e:any) { // 输入手机号
@@ -129,7 +131,7 @@ export default class Register extends Component<any, IState> {
     setConfirmPassword (e:any) { // 确认密码
         let value = e.target.value
         this.setState(() => ({
-            confirmPassword: value
+            password2: value
         }))
     }
     register = () => { // 点击注册按钮
@@ -140,12 +142,24 @@ export default class Register extends Component<any, IState> {
             messageValue: '', // 短信验证码信息
             password: '', // 密码
             confirmPassword: '' // 确认密码*/
-        let {phone, code, imgCode, messageValue, password} = this.state
+        let {phone, messageValue, password, password2} = this.state
         let obj = {
             mobile: phone,
-            image_code_id: code,
-            image_code: imgCode
+            sms_code: messageValue,
+            password: password,
+            password2: password2
         }
+        registerUser(obj).then((res:any) => {
+            console.log(res)
+            if (res.errno === 0 || res.errno === '0') {
+                Toast.success('注册成功', 1);
+                this.props.history.replace('/')
+            } else {
+                Toast.info(res.errmsg, 1);
+            }
+        }).catch((err:any) => {
+            Toast.info(err, 1);
+        })
     }
 
 }

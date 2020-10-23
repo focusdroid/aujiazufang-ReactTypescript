@@ -12,26 +12,45 @@ let routes = [
     {id: 4, author: 1, name: 'My', path: '/my', component: lazy(() => import('./components/user/my/My'))},
     {id: 5, author: 1, name: 'Search', path: '/search', component: lazy(() => import('./components/user/search/Search'))},
     {id: 6, author: 1, name: 'Detail', path: '/detail', component: lazy(() => import('./components/user/detail/Detail'))},
+    {id: 7, author: 1, name: 'Auth', path: '/auth', component: lazy(() => import('./components/user/auth/Auth'))},
+    {id: 8, author: 1, name: 'Orders', path: '/orders', component: lazy(() => import('./components/user/orders/Orders'))},
+    {id: 9, author: 1, name: 'NewHouse', path: '/newhouse', component: lazy(() => import('./components/user/newhouse/NewHouse'))},
+    {id: 10, author: 1, name: 'MyHouse', path: '/myhouse', component: lazy(() => import('./components/user/myhouse/MyHouse'))},
+    {id: 11, author: 1, name: 'Lorders', path: '/lorders', component: lazy(() => import('./components/user/lorders/Lorders'))},
+    {id: 12, author: 1, name: 'Booking', path: '/booking', component: lazy(() => import('./components/user/booking/Booking'))},
+    {id: 13, author: 1, name: 'Profile', path: '/profile', component: lazy(() => import('./components/user/profile/Profile'))}
 ]
 
-const Hello = lazy(() => import('./components/Hello'))
+const Router = () => {
+    return (<BrowserRouter>
+        <App>
+            <Suspense fallback={<Loading/>}>
+                <Switch>
+                    {routes.map((item) => {
+                        return <Route key={item.id} name={item.name} path={item.path} component={item.component}/>
+                    })}
+                </Switch>
+            </Suspense>
+        </App>
+    </BrowserRouter>)
+}
+export default Router
+
+
+/*const Hello = lazy(() => import('./components/Hello'))
 const Login = lazy(() => import('./components/login/Login'))
 const Register = lazy(() => import('./components/register/Register'))
 const Index = lazy(() => import('./components/index/Index'))
 const My = lazy(() => import('./components/user/my/My'))
 const Search = lazy(() => import('./components/user/search/Search'))
 const Detail = lazy(() => import('./components/user/detail/Detail'))
-
 const Auth = lazy(() => import('./components/user/auth/Auth'))
 const NewHouse = lazy(() => import('./components/user/newhouse/NewHouse'))
 const MyHouse = lazy(() => import('./components/user/myhouse/MyHouse'))
 const Lorders = lazy(() => import('./components/user/lorders/Lorders'))
 const Booking = lazy(() => import('./components/user/booking/Booking'))
 const Profile = lazy(() => import('./components/user/profile/Profile'))
-
-
 const Router = () => {
-    // @ts-ignore
     return (<BrowserRouter>
         <App>
             <Suspense fallback={<Loading/>}>
@@ -55,4 +74,4 @@ const Router = () => {
         </App>
     </BrowserRouter>)
 }
-export default Router
+export default Router*/

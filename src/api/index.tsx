@@ -9,5 +9,8 @@ export function get_image_code (obj:Object = {}) {
 }
 
 export function get_sms_codes (obj:Object= {}) {
-    return fetch.requestget(`/api/v1.0/get_sms_codes`, obj)
+    return fetch.requestget(`/api/v1.0/sms_codes`, obj)
+}
+export function registerUser (obj:Object={}) { // 注册
+    return fetch.requestpost(`/api/v1.0/register`, obj)
 }
