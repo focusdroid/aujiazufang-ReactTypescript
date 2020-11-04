@@ -14,3 +14,10 @@ export function get_sms_codes (obj:Object= {}) {
 export function registerUser (obj:Object={}) { // 注册
     return fetch.requestpost(`/api/v1.0/register`, obj)
 }
+
+export function get_csrf_token (obj:Object={}) { // 每次刷新页面获取新的csrf_token
+    return fetch.requestget(`/api/v1.0/get_csrf_token`, obj)
+}
+export function Logins (obj:Object={}) { // 登录接口
+    return fetch.requestpost(`/api/v1.0/login`, obj)
+}
