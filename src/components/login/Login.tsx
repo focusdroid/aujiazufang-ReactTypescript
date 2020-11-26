@@ -47,7 +47,7 @@ export default class Login extends Component<any, IState>{
                         /></div>
                     </div>
                 </div>
-                <Button title={'登录'} onClick={this.login}/>
+                <Button title={'登录'} onClick={this.goLogin}/>
                 <div className={login.messlogin}>
                     <p>没有账号，<Link className={login.logincolor} to={'/register'}>立即注册</Link></p>
                 </div>
@@ -66,14 +66,18 @@ export default class Login extends Component<any, IState>{
             password: value
         }))
     }
-    login = () => {
+    goLogin = () => {
+        console.log("login start")
         let obj = {
             mobile: this.state.name,
             password: this.state.password,
         }
-        Logins(obj).then((res:any) => {
-            console.log(res)
-            console.log(res.data)
+        Logins(obj).then(function(response:any){
+            alert()
+            console.log('--------------start--------------')
+            console.log(response)
+            console.log('--------------end--------------')
         })
+        console.log("login end")
     }
 }

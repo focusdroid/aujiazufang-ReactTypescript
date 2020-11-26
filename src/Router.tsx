@@ -27,7 +27,7 @@ const Router = () => {
             <Suspense fallback={<Loading/>}>
                 <Switch>
                     {routes.map((item) => {
-                        return <Route key={item.id} name={item.name} path={item.path} component={item.component}/>
+                        return <Route exact={item.exact} key={item.id} name={item.name} path={item.path} component={item.component}/>
                     })}
                 </Switch>
             </Suspense>

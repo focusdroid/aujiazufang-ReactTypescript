@@ -21,3 +21,6 @@ export function get_csrf_token (obj:Object={}) { // 每次刷新页面获取新�
 export function Logins (obj:Object={}) { // 登录接口
     return fetch.requestpost(`/api/v1.0/login`, obj)
 }
+export function loadFiles (obj:Object={}) { // 图像上传接口
+    return fetch.loadFiles(`/api/v1.0/users/avatar`, obj)
+}
