@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import 'antd-mobile/dist/antd-mobile.css'
 import Router from './Router'
 import * as serviceWorker from './serviceWorker';
+import 'antd-mobile/dist/antd-mobile.css';
 
 ReactDOM.render(
   <React.StrictMode>

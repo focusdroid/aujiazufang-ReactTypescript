@@ -8,19 +8,26 @@ class HomePageHeader extends Component<any, any> {
     constructor(props:any) {
         super(props);
         this.state = {
-            loginStatus: false
+            loginStatus: false,
+            user: '',
+            mobile: '',
         }
     }
     public render(){
-        // @ts-ignore
+        const {loginStatus, user} = this.state
         return (<Fragment>
             <div className={homePageHeader.homePageHeader}>
                 <div className={homePageHeader.box}>
                     <div className={homePageHeader.logo}>iHome</div>
-                    <div className={homePageHeader.btn} style={{display: this.state.loginStatus ? 'none' : 'flex'}}>
-                        <Link to={'/register'}><button>注册</button></Link>
-                        <Link to={'/login'}><button>登录</button></Link>
-                    </div>
+                    {
+                        loginStatus ? <div style={{marginRight: 28}} onClick={this.goSetting}>{user}</div> : <div
+                            className={homePageHeader.btn}
+                            style={{display: 'flex'}}>
+                            <Link to={'/register'}><button>注册</button></Link>
+                            <Link to={'/login'}><button>登录</button></Link>
+                        </div>
+                    }
+
                     <div className={homePageHeader.username} style={{display: !this.state.loginStatus ? 'none' : 'line'}}>
                         <Link to={'/my'}><span>name</span></Link>
                     </div>
@@ -41,7 +48,23 @@ class HomePageHeader extends Component<any, any> {
             </div>
         </Fragment>)
     }
-
+    componentDidMount() {
+        this.getLocalData()
+    }
+    getLocalData () { // 获取用户数据展示相
+        const userLocal = JSON.parse(sessionStorage.user)
+        this.setState(() => ({
+            loginStatus: true
+        }),() => {
+            this.setState({
+                user: userLocal.user,
+                mobile: userLocal.mobile
+            })
+        })
+    }
+    goSetting = () => {
+        this.props.history.push({pathname: '/my', query: {name: this.state.user}})
+    }
     public jumpSearch = () => {
         this.props.history.push('/search')
     }

@@ -1,6 +1,7 @@
 import React, { Fragment, Component } from 'react'
 import Logo from '../../plugin/logo/Logo'
 import {Link} from "react-router-dom";
+import {Toast} from 'antd-mobile'
 import Button from '../../plugin/button/Button'
 import { Logins } from '../../api/index'
 const login = require('../../style/less/base.module.less')
@@ -67,17 +68,15 @@ export default class Login extends Component<any, IState>{
         }))
     }
     goLogin = () => {
-        console.log("login start")
-        let obj = {
-            mobile: this.state.name,
-            password: this.state.password,
-        }
-        Logins(obj).then(function(response:any){
-            alert()
-            console.log('--------------start--------------')
-            console.log(response)
-            console.log('--------------end--------------')
+        let obj = {mobile: this.state.name, password: this.state.password,}
+        Logins(obj).then((res:any) => {
+            if (res.errno === 0 || res.errno === '0') {
+                Toast.success(res.errmsg, 1.5);
+                sessionStorage.user = JSON.stringify(res.data)
+                this.props.history.replace("/")
+            } else {
+                Toast.fail(res.errmsg, 1.5);
+            }
         })
-        console.log("login end")
     }
 }
