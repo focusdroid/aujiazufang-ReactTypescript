@@ -43,11 +43,15 @@ const My = () => {
             <Link to={'/lorders'}><p>客户订单</p></Link>
         </div>
         <div className={`${my.baseinfo}`}>
-            <p>退出</p>
+            <p onClick={goLogin}>退出</p>
         </div>
     </div>
     {/*    我的信息、设置ebd*/}
     </Fragment>)
+    function goLogin () {
+        // 先请求消除服务器的用户登录信息，在清楚本地登录标识
+        sessionStorage.clear()
+    }
 }
 
 export default My

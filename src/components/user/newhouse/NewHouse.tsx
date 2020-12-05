@@ -1,8 +1,19 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useEffect } from 'react'
+import { getAreasList } from '../../../api/index'
 import TitleBar from "../../../plugin/titleBar/TitleBar";
 
 const newhouse = require('../../../style/less/base.module.less')
+
+function getAreas() {
+    getAreasList().then((res:any) => {
+        console.log(res)
+    })
+}
+
 const NewHouse = () => {
+    useEffect(() => {
+        getAreas()
+    })
     return (<Fragment>
         <TitleBar title={'发布新房源'}/>
         <div className={newhouse.newhouse}>

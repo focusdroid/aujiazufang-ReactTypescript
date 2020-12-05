@@ -52,15 +52,21 @@ class HomePageHeader extends Component<any, any> {
         this.getLocalData()
     }
     getLocalData () { // 获取用户数据展示相
-        const userLocal = JSON.parse(sessionStorage.user)
-        this.setState(() => ({
-            loginStatus: true
-        }),() => {
-            this.setState({
-                user: userLocal.user,
-                mobile: userLocal.mobile
+        const userLocal = sessionStorage.user !== undefined ?  JSON.parse(sessionStorage.user) : ''
+        if (userLocal !== '') {
+            this.setState(() => ({
+                loginStatus: true
+            }),() => {
+                this.setState({
+                    user: userLocal.user,
+                    mobile: userLocal.mobile
+                })
             })
-        })
+        } else {
+            this.setState(() => ({
+                loginStatus: false
+            }))
+        }
     }
     goSetting = () => {
         this.props.history.push({pathname: '/my', query: {name: this.state.user}})

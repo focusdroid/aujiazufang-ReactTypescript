@@ -24,3 +24,6 @@ export function Logins (obj:Object={}) { // 登录接口
 export function loadFiles (obj:Object={}) { // 图像上传接口
     return fetch.loadFiles(`/api/v1.0/users/avatar`, obj)
 }
+export function getAreasList (obj:Object={}) { // 获取城区信息
+    return fetch.requestget(`/api/v1.0/areas`, obj)
+}
