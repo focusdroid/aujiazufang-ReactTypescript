@@ -1,14 +1,19 @@
 import axios from 'axios'
-let qs = require('qs');
+import {Toast} from 'antd-mobile'
 
-export default class fetch {
+class fetch {
     static requestget (url:string, params:Object) {
         return new Promise((resolve, reject) => {
             axios.get(url,{
                 params: params
             }).then(response => {
                 if (response.status === 200) {
-                    return resolve(response.data)
+                    if (response.data.errno === '4104') {
+                        Toast.fail(response.data.errmsg, 2)
+                        window.location.replace('/login')
+                    } else {
+                        return resolve(response.data)
+                    }
                 }
             }).catch(err => {
                 return reject(err)
@@ -24,7 +29,12 @@ export default class fetch {
                 }
             }).then((response:any) => {
                 if (response.status === 200) {
-                    return resolve(response.data)
+                    if (response.data.errno === '4104') {
+                        Toast.fail(response.data.errmsg, 2)
+                        window.location.replace('/login')
+                    } else {
+                        return resolve(response.data)
+                    }
                 }
             }).catch((err:any) => {
                 return reject(err)
@@ -40,7 +50,12 @@ export default class fetch {
                 }
             }).then((response:any) => {
                 if (response.status === 200) {
-                    return resolve(response.data)
+                        if (response.data.errno === '4101') {
+                            Toast.fail(response.data.errmsg, 2)
+                            window.location.replace('/login')
+                        } else {
+                            return resolve(response.data)
+                        }
                 }
             }).catch((err:any) => {
                 return reject(err)
@@ -57,3 +72,7 @@ export default class fetch {
             return null;
     }
 }
+
+// @ts-ignore
+// export default withRouter(fetch)
+export default fetch

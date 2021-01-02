@@ -31,17 +31,20 @@ const Profile = () => {
                 </div>
             </div>
             <div className={profile.btn}>
-                <button>保存</button>
+                <button onClick={saveMessage}>保存</button>
             </div>
         </div>
     </Fragment>)
+    function saveMessage () {
+
+    }
     function loadImage () {
         // @ts-ignore
         const filee = file.current.files[0]
         let data = new FormData()
         data.append('avatar', filee, filee.name)
         loadFiles(data).then((res:any) => {
-            console.log(res)
+            // console.log(res)
             if (res.errno === 0 || res.errno === '0') {
                 // setImgUrl(img_url: res.data.avatar_url)
             }

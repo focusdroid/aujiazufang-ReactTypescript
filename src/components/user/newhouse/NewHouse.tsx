@@ -1,20 +1,26 @@
-import React, { Fragment, useEffect } from 'react'
+import React, { Fragment, Component } from 'react'
 import { getAreasList } from '../../../api/index'
 import TitleBar from "../../../plugin/titleBar/TitleBar";
 
 const newhouse = require('../../../style/less/base.module.less')
 
-function getAreas() {
-    getAreasList().then((res:any) => {
-        console.log(res)
-    })
+interface IState {
+    areaList: Array<any>
 }
 
-const NewHouse = () => {
-    useEffect(() => {
-        getAreas()
-    })
-    return (<Fragment>
+
+export default class NewHouse extends Component<any, IState> {
+    constructor(props:any) {
+        super(props);
+        this.state = {
+            areaList: []
+        }
+    }
+    componentDidMount(){
+        this.getAreas()
+    }
+    render () {
+        return (<Fragment>
         <TitleBar title={'发布新房源'}/>
         <div className={newhouse.newhouse}>
             <div className={newhouse.box}>
@@ -23,20 +29,20 @@ const NewHouse = () => {
                 </div>
                 <div className={newhouse.table}>
                     <div>
-                        <div className={newhouse.name}>真实姓名</div>
-                        <div><input type="text" className={newhouse.newhouseinput} placeholder={'真实姓名'}/></div>
+                        <div className={newhouse.name}>房屋标题</div>
+                        <div><input type="text" className={newhouse.newhouseinput}/></div>
                     </div>
                     <div>
-                        <div className={newhouse.name}>身份证号码</div>
-                        <div><input type="text" className={newhouse.newhouseinput} placeholder={'身份证号码'}/></div>
+                        <div className={newhouse.name}>每晚价格</div>
+                        <div><input type="text" className={newhouse.newhouseinput}/></div>
                     </div>
                     <div>
-                        <div className={newhouse.name}>手机号码</div>
-                        <div><input type="text" className={newhouse.newhouseinput} placeholder={'手机号码'}/></div>
+                        <div className={newhouse.name}>所在城区</div>
+                        <div><input type="text" className={newhouse.newhouseinput}/></div>
                     </div>
                     <div>
-                        <div className={newhouse.name}>现居住地址</div>
-                        <div><input type="text" className={newhouse.newhouseinput} placeholder={'现居住地址'}/></div>
+                        <div className={newhouse.name}>详细地址</div>
+                        <div><input type="text" className={newhouse.newhouseinput}/></div>
                     </div>
                 </div>
             </div>
@@ -54,7 +60,6 @@ const NewHouse = () => {
                             <input
                                 type="text"
                                 className={newhouse.newhouseinput}
-                                placeholder={'出租房间数目'}
                             />
                         </div>
                     </div>
@@ -63,7 +68,6 @@ const NewHouse = () => {
                         <div>
                             <input type="text"
                                    className={newhouse.newhouseinput}
-                                   placeholder={'房屋面积'}
                             />
                         </div>
                     </div>
@@ -77,11 +81,44 @@ const NewHouse = () => {
                         </div>
                     </div>
                     <div>
+                        <div className={newhouse.name}>宜住人数</div>
+                        <div>
+                            <input type="text"
+                                   className={newhouse.newhouseinput}
+                            />
+                        </div>
+                    </div>
+                    <div>
                         <div className={newhouse.name}>卧床配置</div>
                         <div className={newhouse.marauto}>
                             <input type="text"
                                    className={newhouse.newhouseinput}
                                    placeholder={'如：双人床2x1.8x1张'}
+                            />
+                        </div>
+                    </div>
+                    <div>
+                        <div className={newhouse.name}>押金数额</div>
+                        <div>
+                            <input type="text"
+                                   className={newhouse.newhouseinput}
+                            />
+                        </div>
+                    </div>
+                    <div>
+                        <div className={newhouse.name}>最少入住天数</div>
+                        <div>
+                            <input type="text"
+                                   className={newhouse.newhouseinput}
+                            />
+                        </div>
+                    </div>
+                    <div>
+                        <div className={newhouse.name}>最多入住天数</div>
+                        <div>
+                            <input type="text"
+                                   className={newhouse.newhouseinput}
+                                   placeholder={'0表示无限制'}
                             />
                         </div>
                     </div>
@@ -187,6 +224,15 @@ const NewHouse = () => {
             <button>发布新房源</button>
         </div>
     </Fragment>)
+    }
+    getAreas = () => {
+        getAreasList().then((res:any) => {
+            console.log(res)
+            const data = res.data
+            console.log(data)
+            /*this.setState(() => ({
+                areaList: res.data
+            }))*/
+        })
+    }
 }
-
-export default NewHouse

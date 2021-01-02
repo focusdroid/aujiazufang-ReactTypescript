@@ -26,7 +26,7 @@ const Auth = (props: IProps) => {
                             <input
                                 type="text"
                                 className={auth.authinput}
-                                placeholder={'房屋标题'}
+                                placeholder={'真实姓名'}
                                 value={houseTitle}
                                 onChange={changeTitle}
                             />
@@ -37,7 +37,7 @@ const Auth = (props: IProps) => {
                         <div>
                             <input type="text"
                                    className={auth.authinput}
-                                   placeholder={'每晚价格'}
+                                   placeholder={'身份证号码'}
                                    value={houseMoney}
                                    onChange={changeMoney}
                             />
