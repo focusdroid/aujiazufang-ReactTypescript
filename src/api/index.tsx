@@ -27,3 +27,6 @@ export function loadFiles (obj:Object={}) { // 图像上传接口
 export function getAreasList (obj:Object={}) { // 获取城区信息
     return fetch.requestget(`/api/v1.0/areas`, obj)
 }
+export function houseInfo(obj:Object={}){ // 提交新房源信息
+    return fetch.requestpost(``, obj)
+}
